@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_corner_2"
+    android:backgroundTint="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRateEmoji"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        app:srcCompat="@drawable/ic_rating_emoji_nor" />
+
+    <TextView
+        android:id="@+id/tvEnjoy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:text="@string/txt_enjoying_the_app"
+        android:textColor="@color/neutral_gray_800"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvRateDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/txt_your_feedback_helps_us_get_better"
+        android:textColor="@color/neutral_gray_500"
+        android:textSize="14sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clLayoutRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvBestRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="23dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxWidth="180dp"
+            android:text="@string/txt_the_best_rating_for_us"
+            android:textColor="@color/yellow_600"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieView"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="center|center_vertical"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@+id/tvBestRate"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            app:lottie_progress="1"
+            app:lottie_rawRes="@raw/rate_animation" />
+
+        <LinearLayout
+            android:id="@+id/llStar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/lottieView"
+            app:layout_constraintEnd_toEndOf="@id/lottieView"
+            app:layout_constraintStart_toStartOf="@id/lottieView"
+            app:layout_constraintTop_toTopOf="@id/lottieView"
+            app:layout_constraintWidth_percent="0.7">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:srcCompat="@drawable/ic_star_state" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar2"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:srcCompat="@drawable/ic_star_state" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar3"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:srcCompat="@drawable/ic_star_state" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar4"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:srcCompat="@drawable/ic_star_state" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar5"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:srcCompat="@drawable/ic_star_state" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toEndOf="@+id/tvBestRate"
+            app:layout_constraintTop_toTopOf="@+id/tvBestRate"
+            app:srcCompat="@drawable/ic_arrow_best_rate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="35dp"
+        android:background="@drawable/bg_corner"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingVertical="15dp"
+        android:text="@string/txt_rate_us"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvLate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="18dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingVertical="5dp"
+        android:text="@string/txt_maybe_later"
+        android:textColor="@color/neutral_gray_300"
+        android:textSize="15sp" />
+</androidx.appcompat.widget.LinearLayoutCompat>

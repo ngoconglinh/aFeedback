@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_corner_2"
+    android:backgroundTint="@color/white"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="15dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:text="@string/txt_tell_us_what_bothers_you"
+        android:textColor="@color/neutral_gray_800"
+        android:textSize="17sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvFb"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/layout_feedback_option" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_corner_2"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="start"
+        android:hint="@string/txt_tell_us_more_about_your_issue"
+        android:includeFontPadding="false"
+        android:inputType="textMultiLine"
+        android:maxLength="1000"
+        android:maxLines="1000"
+        android:minHeight="60dp"
+        android:paddingHorizontal="13dp"
+        android:paddingVertical="15dp"
+        android:textColor="@color/neutral_gray_800"
+        android:textColorHint="@color/neutral_gray_300"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_corner"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingVertical="15dp"
+        android:text="@string/txt_send"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@+id/edtFeedback" />
+</androidx.appcompat.widget.LinearLayoutCompat>

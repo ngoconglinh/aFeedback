@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_thanks_for_your_feedback">Thanks for your feedback</string>
+    <string name="txt_tell_us_what_bothers_you">Tell us what bothers you</string>
+    <string name="txt_send">Send</string>
+    <string name="txt_tell_us_more_about_your_issue">Tell us more about your issue</string>
+    <string name="txt_enjoying_the_app">Enjoying the app?</string>
+    <string name="txt_your_feedback_helps_us_get_better">Your feedback helps us get better!</string>
+    <string name="txt_the_best_rating_for_us">The best rating for us</string>
+    <string name="txt_rate_us">Rate us</string>
+    <string name="txt_maybe_later">Maybe later</string>
+    <string name="txt_not_enjoying_the_app">Not enjoying the app?</string>
+    <string name="txt_could_you_share_what_went_wrong">Could you share what went wrong?</string>
+    <string name="txt_thank_you_for_the_love">Thank you for the love!</string>
+    <string name="txt_your_rating_made_our_day">Your rating made our day!</string>
+    <string name="txt_other">Other</string>
+</resources>
