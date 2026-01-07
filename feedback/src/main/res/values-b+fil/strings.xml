@@ -1,0 +1,16 @@
+<resources>
+    <string name="txt_thanks_for_your_feedback">Salamat sa iyong feedback</string>
+    <string name="txt_tell_us_what_bothers_you">Sabihin sa amin kung ano ang gumugulo sa iyo</string>
+    <string name="txt_send">Ipadala</string>
+    <string name="txt_tell_us_more_about_your_issue">Sabihin sa amin ang higit pa tungkol sa iyong isyu</string>
+    <string name="txt_enjoying_the_app">Nag-eenjoy sa app?</string>
+    <string name="txt_your_feedback_helps_us_get_better">Ang iyong feedback ay nakakatulong sa amin na gumanda pa!</string>
+    <string name="txt_the_best_rating_for_us">Ang pinakamagandang rating para sa amin</string>
+    <string name="txt_rate_us">I-rate kami</string>
+    <string name="txt_maybe_later">Siguro mamaya</string>
+    <string name="txt_not_enjoying_the_app">Hindi nag-eenjoy sa app?</string>
+    <string name="txt_could_you_share_what_went_wrong">Puwede mo bang ibahagi kung ano ang nangyari?</string>
+    <string name="txt_thank_you_for_the_love">Salamat sa pagmamahal!</string>
+    <string name="txt_your_rating_made_our_day">Ang iyong rating ay nagpasaya sa araw namin!</string>
+    <string name="txt_other">Iba pa</string>
+</resources>

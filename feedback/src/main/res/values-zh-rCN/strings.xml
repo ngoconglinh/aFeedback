@@ -1,0 +1,16 @@
+<resources>
+    <string name="txt_thanks_for_your_feedback">感谢您的反馈</string>
+    <string name="txt_tell_us_what_bothers_you">请告诉我们您遇到的问题</string>
+    <string name="txt_send">发送</string>
+    <string name="txt_tell_us_more_about_your_issue">请详细描述您的问题</string>
+    <string name="txt_enjoying_the_app">喜欢这个应用吗？</string>
+    <string name="txt_your_feedback_helps_us_get_better">您的反馈能帮助我们做得更好！</string>
+    <string name="txt_the_best_rating_for_us">对我们最好的评价</string>
+    <string name="txt_rate_us">给我们评分</string>
+    <string name="txt_maybe_later">稍后</string>
+    <string name="txt_not_enjoying_the_app">不喜欢这个应用吗？</string>
+    <string name="txt_could_you_share_what_went_wrong">您能分享一下哪里出问题了吗？</string>
+    <string name="txt_thank_you_for_the_love">感谢您的喜爱！</string>
+    <string name="txt_your_rating_made_our_day">您的评分让我们感到非常开心！</string>
+    <string name="txt_other">其他</string>
+</resources>

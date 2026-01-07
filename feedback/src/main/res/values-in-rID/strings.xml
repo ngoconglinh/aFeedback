@@ -1,0 +1,16 @@
+<resources>
+    <string name="txt_thanks_for_your_feedback">Terima kasih atas masukan Anda</string>
+    <string name="txt_tell_us_what_bothers_you">Beri tahu kami apa yang mengganggu Anda</string>
+    <string name="txt_send">Kirim</string>
+    <string name="txt_tell_us_more_about_your_issue">Ceritakan lebih banyak tentang masalah Anda</string>
+    <string name="txt_enjoying_the_app">Menikmati aplikasinya?</string>
+    <string name="txt_your_feedback_helps_us_get_better">Masukan Anda membantu kami menjadi lebih baik!</string>
+    <string name="txt_the_best_rating_for_us">Rating terbaik untuk kami</string>
+    <string name="txt_rate_us">Nilai kami</string>
+    <string name="txt_maybe_later">Mungkin nanti</string>
+    <string name="txt_not_enjoying_the_app">Tidak menikmati aplikasinya?</string>
+    <string name="txt_could_you_share_what_went_wrong">Bisakah Anda berbagi apa yang salah?</string>
+    <string name="txt_thank_you_for_the_love">Terima kasih atas cintanya!</string>
+    <string name="txt_your_rating_made_our_day">Rating Anda membuat hari kami menyenangkan!</string>
+    <string name="txt_other">Lainnya</string>
+</resources>

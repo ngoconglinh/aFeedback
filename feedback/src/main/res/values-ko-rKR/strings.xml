@@ -1,0 +1,16 @@
+<resources>
+    <string name="txt_thanks_for_your_feedback">피드백을 주셔서 감사합니다</string>
+    <string name="txt_tell_us_what_bothers_you">불편한 점을 알려주세요</string>
+    <string name="txt_send">보내기</string>
+    <string name="txt_tell_us_more_about_your_issue">문제에 대해 더 자세히 알려주세요</string>
+    <string name="txt_enjoying_the_app">앱이 마음에 드시나요?</string>
+    <string name="txt_your_feedback_helps_us_get_better">여러분의 피드백은 저희를 더 나은 곳으로 만들어줍니다!</string>
+    <string name="txt_the_best_rating_for_us">저희에게 최고의 평점</string>
+    <string name="txt_rate_us">평가하기</string>
+    <string name="txt_maybe_later">나중에요</string>
+    <string name="txt_not_enjoying_the_app">앱이 마음에 안 드시나요?</string>
+    <string name="txt_could_you_share_what_went_wrong">무엇이 잘못되었는지 공유해 주시겠어요?</string>
+    <string name="txt_thank_you_for_the_love">사랑해주셔서 감사합니다!</string>
+    <string name="txt_your_rating_made_our_day">여러분의 평점에 저희는 기뻤습니다!</string>
+    <string name="txt_other">기타</string>
+</resources>

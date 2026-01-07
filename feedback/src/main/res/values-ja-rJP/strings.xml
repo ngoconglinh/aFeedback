@@ -1,0 +1,16 @@
+<resources>
+    <string name="txt_thanks_for_your_feedback">ご意見ありがとうございます</string>
+    <string name="txt_tell_us_what_bothers_you">何がご不満か教えてください</string>
+    <string name="txt_send">送信</string>
+    <string name="txt_tell_us_more_about_your_issue">問題について詳しく教えてください</string>
+    <string name="txt_enjoying_the_app">アプリをお楽しみいただけていますか？</string>
+    <string name="txt_your_feedback_helps_us_get_better">皆様からのフィードバックは、より良いアプリ作りに役立ちます！</string>
+    <string name="txt_the_best_rating_for_us">最高の評価をお願いします</string>
+    <string name="txt_rate_us">評価する</string>
+    <string name="txt_maybe_later">後で</string>
+    <string name="txt_not_enjoying_the_app">アプリをお楽しみいただけませんか？</string>
+    <string name="txt_could_you_share_what_went_wrong">どこが悪かったか教えていただけますか？</string>
+    <string name="txt_thank_you_for_the_love">応援ありがとうございます！</string>
+    <string name="txt_your_rating_made_our_day">評価していただき、ありがとうございます！</string>
+    <string name="txt_other">その他</string>
+</resources>

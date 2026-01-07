@@ -1,0 +1,16 @@
+<resources>
+    <string name="txt_thanks_for_your_feedback">Vielen Dank für Ihr Feedback</string>
+    <string name="txt_tell_us_what_bothers_you">Sagen Sie uns, was Sie stört</string>
+    <string name="txt_send">Senden</string>
+    <string name="txt_tell_us_more_about_your_issue">Beschreiben Sie Ihr Problem genauer</string>
+    <string name="txt_enjoying_the_app">Gefällt Ihnen die App?</string>
+    <string name="txt_your_feedback_helps_us_get_better">Ihr Feedback hilft uns, besser zu werden!</string>
+    <string name="txt_the_best_rating_for_us">Ihre beste Bewertung</string>
+    <string name="txt_rate_us">Bewerten Sie uns</string>
+    <string name="txt_maybe_later">Vielleicht später</string>
+    <string name="txt_not_enjoying_the_app">Gefällt Ihnen die App nicht?</string>
+    <string name="txt_could_you_share_what_went_wrong">Könnten Sie uns mitteilen, was schiefgelaufen ist?</string>
+    <string name="txt_thank_you_for_the_love">Vielen Dank für Ihre positive Bewertung!</string>
+    <string name="txt_your_rating_made_our_day">Ihre Bewertung hat uns sehr gefreut!</string>
+    <string name="txt_other">Sonstiges</string>
+</resources>

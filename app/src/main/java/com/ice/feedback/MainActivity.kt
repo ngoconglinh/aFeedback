@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         val fbItem = listOf(
-            Feedback("AAAAAAAAAAAAAAAAAAA", "AAAAAAAAAAAAAAAAAAA"),
-            Feedback("BBBBBBBBBBBBBBBBBBB", "BBBBBBBBBBBBBBBBBBB"),
-            Feedback("CCCCCCCCCCCCCCCCCCC", "CCCCCCCCCCCCCCCCCCC"),
-            Feedback("DDDDDDDDDDDDDDDDDDD", "DDDDDDDDDDDDDDDDDDD"),
-            Feedback("EEEEEEEEEEEEEEEEEEE", "EEEEEEEEEEEEEEEEEEE"),
-            Feedback("FFFFFFFFFFFFFFFFFFF", "FFFFFFFFFFFFFFFFFFF"),
-            Feedback("GGGGGGGGGGGGGGGGGGG", "GGGGGGGGGGGGGGGGGGG"),
+            Feedback(text = "AAAAAAAAAAAAAAAAAAA", textNonTranslate = "AAAAAAAAAAAAAAAAAAA"),
+            Feedback(text = "BBBBBBBBBBBBBBBBBBB", textNonTranslate = "BBBBBBBBBBBBBBBBBBB"),
+            Feedback(text = "CCCCCCCCCCCCCCCCCCC", textNonTranslate = "CCCCCCCCCCCCCCCCCCC"),
+            Feedback(text = "DDDDDDDDDDDDDDDDDDD", textNonTranslate = "DDDDDDDDDDDDDDDDDDD"),
+            Feedback(text = "EEEEEEEEEEEEEEEEEEE", textNonTranslate = "EEEEEEEEEEEEEEEEEEE"),
+            Feedback(text = "FFFFFFFFFFFFFFFFFFF", textNonTranslate = "FFFFFFFFFFFFFFFFFFF"),
+            Feedback(text = "GGGGGGGGGGGGGGGGGGG", textNonTranslate = "GGGGGGGGGGGGGGGGGGG"),
         )
         val dialog = FeedbackDialog.Builder(this)
             .addFeedbackItem(fbItem)
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         bd.btnShow.setOnClickListener {
-            dialog.showODialog(false)
+            dialog.showODialog(isOpenFeedback = false)
         }
     }
 }
