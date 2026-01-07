@@ -1,5 +1,6 @@
 package com.ice.feedback
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -32,15 +33,16 @@ class MainActivity : AppCompatActivity() {
         )
         val dialog = FeedbackDialog.Builder(this)
             .addFeedbackItem(fbItem)
-            .appName("aanbc")
+            .appName("abc")
             .versionName("V123")
             .setSenderEmail("feedback@lutech.ltd")
-            .setSenderPass("hipq dptz sisv dkca")
+            .setSenderPass("abc")
             .setReceiveEmail("universe@lutech.ltd")
+            .setColorTheme(Color.RED)
             .build()
 
         bd.btnShow.setOnClickListener {
-            dialog.show()
+            dialog.showODialog(false)
         }
     }
 }

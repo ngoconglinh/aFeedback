@@ -33,6 +33,8 @@ class FeedbackDialog(
     internal var senderEmail = ""
     internal var senderPass = ""
     internal var receiveEmail = ""
+    internal var colorTheme = Color.BLUE
+    internal var isOpenFeedback = false
 
     init {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -62,7 +64,7 @@ class FeedbackDialog(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewBinding?.fbView?.setPrimaryColor(Color.BLUE)
+        viewBinding?.fbView?.setPrimaryColor(colorTheme)
         viewBinding?.fbView?.submitFeedbackItem(listFeedback)
         viewBinding?.fbView?.addListener(object : FeedbackViewListener {
             override fun onEndFeedback() {
@@ -83,7 +85,7 @@ class FeedbackDialog(
             }
         })
         setOnShowListener {
-            viewBinding?.fbView?.onStart()
+            viewBinding?.fbView?.onStart(isOpenFeedback)
         }
         setOnDismissListener {
             viewBinding?.fbView?.resetView()
@@ -119,6 +121,14 @@ class FeedbackDialog(
         }
     }
 
+    fun showODialog(isOpenFeedback: Boolean) {
+        if (isOpenFeedback) {
+            viewBinding?.fbView?.showFeedback()
+        }
+        this.isOpenFeedback = isOpenFeedback
+        show()
+    }
+
     override fun show() {
         if (!activity.isDestroyed && !activity.isFinishing) {
             super.show()
@@ -138,7 +148,7 @@ class FeedbackDialog(
         private var senderEmail: String? = null
         private var senderPass: String? = null
         private var receiveEmail: String? = null
-
+        private var mThemeColor = Color.BLUE
 
         fun addFeedbackItem(fbItem: List<Feedback>): Builder {
             this.fbItem = fbItem
@@ -169,6 +179,10 @@ class FeedbackDialog(
             this.receiveEmail = receiveEmail
             return this
         }
+        fun setColorTheme(color: Int): Builder {
+            this.mThemeColor = color
+            return this
+        }
 
         fun build(): FeedbackDialog {
             if (fbItem == null) {
@@ -197,6 +211,7 @@ class FeedbackDialog(
                 this.senderEmail = this@Builder.senderEmail!!
                 this.senderPass = this@Builder.senderPass!!
                 this.receiveEmail = this@Builder.receiveEmail!!
+                this.colorTheme = this@Builder.mThemeColor
             }
         }
     }

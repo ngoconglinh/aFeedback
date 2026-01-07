@@ -39,8 +39,13 @@ class FeedbackView @JvmOverloads constructor(
         this.feedbackViewListener = listener
     }
 
-    fun onStart(){
-        viewBinding.icRate.lottieView.playAnimation()
+    fun onStart(isShowFeedback: Boolean = false){
+        if (isShowFeedback) {
+            showFeedback()
+        } else {
+            showRating()
+            viewBinding.icRate.lottieView.playAnimation()
+        }
     }
 
     fun resetView() {
@@ -93,7 +98,6 @@ class FeedbackView @JvmOverloads constructor(
     private fun initView() = with(viewBinding) {
         starBtn = listOf(icRate.ivStar1, icRate.ivStar2, icRate.ivStar3, icRate.ivStar4, icRate.ivStar5)
         icFB.rcvFb.adapter = fbAdapter
-        showRating()
     }
 
     private fun initEvent() = with(viewBinding) {
@@ -151,7 +155,7 @@ class FeedbackView @JvmOverloads constructor(
         icThanks.root.visibility = GONE
     }
 
-    private fun showFeedback() = with(viewBinding) {
+    fun showFeedback() = with(viewBinding) {
         icRate.root.visibility = GONE
         icFB.root.visibility = VISIBLE
         icThanks.root.visibility = GONE
