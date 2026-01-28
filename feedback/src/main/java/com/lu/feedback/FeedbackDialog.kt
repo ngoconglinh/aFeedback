@@ -33,6 +33,7 @@ class FeedbackDialog(
     internal var senderEmail = ""
     internal var senderPass = ""
     internal var receiveEmail = ""
+    internal var otherText: String? = null
     internal var colorTheme = Color.BLUE
     internal var isOpenFeedback = false
 
@@ -65,7 +66,7 @@ class FeedbackDialog(
         super.onCreate(savedInstanceState)
 
         viewBinding?.fbView?.setPrimaryColor(colorTheme)
-        viewBinding?.fbView?.submitFeedbackItem(listFeedback)
+        viewBinding?.fbView?.submitFeedbackItem(listFeedback, otherText)
         viewBinding?.fbView?.addListener(object : FeedbackViewListener {
             override fun onEndFeedback() {
                 dismiss()
@@ -121,7 +122,7 @@ class FeedbackDialog(
         }
     }
 
-    fun showODialog(isOpenFeedback: Boolean) {
+    fun showDialog(isOpenFeedback: Boolean) {
         if (isOpenFeedback) {
             viewBinding?.fbView?.showFeedback()
         }
@@ -149,6 +150,7 @@ class FeedbackDialog(
         private var senderPass: String? = null
         private var receiveEmail: String? = null
         private var mThemeColor = Color.BLUE
+        private var otherText: String? = null
 
         fun addFeedbackItem(fbItem: List<Feedback>): Builder {
             this.fbItem = fbItem
@@ -184,6 +186,11 @@ class FeedbackDialog(
             return this
         }
 
+        fun setOtherText(text: String): Builder {
+            this.otherText = text
+            return this
+        }
+
         fun build(): FeedbackDialog {
             if (fbItem == null) {
                 throw IllegalStateException("Feedback items are required. Please call addFeedbackItem().")
@@ -212,6 +219,7 @@ class FeedbackDialog(
                 this.senderPass = this@Builder.senderPass!!
                 this.receiveEmail = this@Builder.receiveEmail!!
                 this.colorTheme = this@Builder.mThemeColor
+                this.otherText = this@Builder.otherText
             }
         }
     }

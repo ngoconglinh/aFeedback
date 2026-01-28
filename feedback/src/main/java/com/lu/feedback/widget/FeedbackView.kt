@@ -51,21 +51,26 @@ class FeedbackView @JvmOverloads constructor(
     fun resetView() {
         starCount = 0
         onStarRatingChange(0)
-        feedbackString = emptyList()
-        sendFeedBackEnable()
-        val currentFb = fbAdapter.currentList.filterNotNull()
-        val newList = currentFb.map {
-            it.copy(isSelected = false)
-        }
-        fbAdapter.submitList(newList)
+        resetFeedback()
         viewBinding.icRate.lottieView.visibility = VISIBLE
         viewBinding.icRate.llStar.visibility = INVISIBLE
         showRating()
     }
 
-    fun submitFeedbackItem(list: List<Feedback>) {
+    private fun resetFeedback() {
+        feedbackString = emptyList()
+        val currentFb = fbAdapter.currentList.filterNotNull()
+        val newList = currentFb.map {
+            it.copy(isSelected = false)
+        }
+        viewBinding.icFB.edtFeedback.setText("")
+        fbAdapter.submitList(newList)
+        sendFeedBackEnable()
+    }
+
+    fun submitFeedbackItem(list: List<Feedback>, otherText: String?) {
         val dataWithOther = list.toMutableList().apply {
-            add(getOtherFb(context))
+            add(getOtherFb(context, otherText))
         }
         fbAdapter.submitList(dataWithOther)
     }
@@ -156,6 +161,7 @@ class FeedbackView @JvmOverloads constructor(
     }
 
     fun showFeedback() = with(viewBinding) {
+        resetFeedback()
         icRate.root.visibility = GONE
         icFB.root.visibility = VISIBLE
         icThanks.root.visibility = GONE

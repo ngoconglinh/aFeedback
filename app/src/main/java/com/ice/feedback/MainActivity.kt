@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val fbItem = listOf(
             Feedback(text = "AAAAAAAAAAAAAAAAAAA", textNonTranslate = "AAAAAAAAAAAAAAAAAAA"),
             Feedback(text = "BBBBBBBBBBBBBBBBBBB", textNonTranslate = "BBBBBBBBBBBBBBBBBBB"),
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             Feedback(text = "FFFFFFFFFFFFFFFFFFF", textNonTranslate = "FFFFFFFFFFFFFFFFFFF"),
             Feedback(text = "GGGGGGGGGGGGGGGGGGG", textNonTranslate = "GGGGGGGGGGGGGGGGGGG"),
         )
+
         val dialog = FeedbackDialog.Builder(this)
             .addFeedbackItem(fbItem)
             .appName("abc")
@@ -39,10 +41,12 @@ class MainActivity : AppCompatActivity() {
             .setSenderPass("abc")
             .setReceiveEmail("universe@lutech.ltd")
             .setColorTheme(Color.RED)
+            .setOtherText("GGGGGGGGGGGGGGGGGGG")
             .build()
 
         bd.btnShow.setOnClickListener {
-            dialog.showODialog(isOpenFeedback = false)
+
+            dialog.showDialog(isOpenFeedback = true)
         }
     }
 }

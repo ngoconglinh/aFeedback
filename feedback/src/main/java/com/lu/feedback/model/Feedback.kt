@@ -10,8 +10,8 @@ data class Feedback (
     val isOtherItem: Boolean = false
 ) {
     companion object {
-        fun getOtherFb(context: Context): Feedback {
-            return Feedback(context.getString(R.string.txt_other), "Other", isSelected = false, isOtherItem = true)
+        fun getOtherFb(context: Context, text: String? = null): Feedback {
+            return Feedback(text?: context.getString(R.string.txt_other), "Other", isSelected = false, isOtherItem = true)
         }
     }
 }
