@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/bg_corner_2"
     android:backgroundTint="@color/white"
     android:gravity="center"
@@ -25,49 +25,63 @@
         android:textColor="@color/neutral_gray_800"
         android:textSize="17sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvFb"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/layout_feedback_option" />
+        android:fillViewport="true"
+        android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edtFeedback"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="18dp"
-        android:layout_weight="1"
-        android:background="@drawable/bg_corner_2"
-        android:fontFamily="@font/roboto_regular"
-        android:gravity="start"
-        android:hint="@string/txt_tell_us_more_about_your_issue"
-        android:includeFontPadding="false"
-        android:inputType="textMultiLine"
-        android:maxLength="1000"
-        android:maxLines="1000"
-        android:minHeight="60dp"
-        android:paddingHorizontal="13dp"
-        android:paddingVertical="15dp"
-        android:textColor="@color/neutral_gray_800"
-        android:textColorHint="@color/neutral_gray_300"
-        android:textSize="14sp" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvSend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/bg_corner"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="center"
-        android:includeFontPadding="false"
-        android:paddingVertical="15dp"
-        android:text="@string/txt_send"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@+id/edtFeedback" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvFb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/layout_feedback_option" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="18dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_corner_2"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start"
+                android:hint="@string/txt_tell_us_more_about_your_issue"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:maxLength="1000"
+                android:maxLines="1000"
+                android:minHeight="120dp"
+                android:paddingHorizontal="13dp"
+                android:paddingVertical="15dp"
+                android:textColor="@color/neutral_gray_800"
+                android:textColorHint="@color/neutral_gray_300"
+                android:textSize="14sp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tvSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_corner"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingVertical="15dp"
+                android:text="@string/txt_send"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintTop_toBottomOf="@+id/edtFeedback" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

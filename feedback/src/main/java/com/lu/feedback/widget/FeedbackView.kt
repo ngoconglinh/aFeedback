@@ -33,6 +33,8 @@ class FeedbackView @JvmOverloads constructor(
     private val fbAdapter = FeedbackAdapter {
         feedbackString = it
         sendFeedBackEnable()
+        val isHasOtherItem = feedbackString.any { s -> s.isOtherItem }
+        viewBinding.icFB.edtFeedback.visibility = if (isHasOtherItem) VISIBLE else GONE
     }
 
     fun addListener(listener: FeedbackViewListener) {
@@ -63,6 +65,7 @@ class FeedbackView @JvmOverloads constructor(
         val newList = currentFb.map {
             it.copy(isSelected = false)
         }
+        viewBinding.icFB.edtFeedback.visibility = GONE
         viewBinding.icFB.edtFeedback.setText("")
         fbAdapter.submitList(newList)
         sendFeedBackEnable()
@@ -225,7 +228,8 @@ class FeedbackView @JvmOverloads constructor(
 
     private fun sendFeedBackEnable() {
         val b1 = feedbackString.isNotEmpty()
-        val b2 = if (feedbackString.any { it.isOtherItem }) {
+        val isHasOtherItem = feedbackString.any { it.isOtherItem }
+        val b2 = if (isHasOtherItem) {
             viewBinding.icFB.edtFeedback.text.toString().replace(" ", "") != ""
         } else {
             true
