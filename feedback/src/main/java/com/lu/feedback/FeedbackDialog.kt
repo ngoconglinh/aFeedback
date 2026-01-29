@@ -47,10 +47,6 @@ class FeedbackDialog(
         window?.let { window ->
             window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
-            windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
-            windowInsetsController.systemBarsBehavior =
-                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 
             window.setBackgroundDrawableResource(android.R.color.transparent)
             window.setDimAmount(0f)
@@ -130,8 +126,16 @@ class FeedbackDialog(
         show()
     }
 
+    private fun attackWindow() {
+        window?.let { window ->
+            val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
+            windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+            windowInsetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        }
+    }
     override fun show() {
         if (!activity.isDestroyed && !activity.isFinishing) {
+            attackWindow()
             super.show()
         }
     }
