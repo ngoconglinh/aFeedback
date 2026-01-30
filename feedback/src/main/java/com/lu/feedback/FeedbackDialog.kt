@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class FeedbackDialog(
+open class FeedbackDialog(
     private val activity: Activity
 ) : Dialog(activity) {
 
@@ -36,6 +36,12 @@ class FeedbackDialog(
     internal var otherText: String? = null
     internal var colorTheme = Color.BLUE
     internal var isOpenFeedback = false
+    internal var listener: FeedbackListener? = null
+
+    interface FeedbackListener {
+        fun onRate()
+        fun onFeedback()
+    }
 
     init {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -69,6 +75,7 @@ class FeedbackDialog(
             }
 
             override fun onOpenStoreForRate() {
+                listener?.onRate()
                 dismiss()
                 goToCHPlay(activity)
             }
@@ -78,6 +85,7 @@ class FeedbackDialog(
             }
 
             override fun onSendFeedback(list: List<String>, otherText: String) {
+                listener?.onFeedback()
                 onSendFeedBack(list, otherText)
             }
         })
@@ -155,6 +163,7 @@ class FeedbackDialog(
         private var receiveEmail: String? = null
         private var mThemeColor = Color.BLUE
         private var otherText: String? = null
+        private var listener: FeedbackListener? = null
 
         fun addFeedbackItem(fbItem: List<Feedback>): Builder {
             this.fbItem = fbItem
@@ -195,6 +204,11 @@ class FeedbackDialog(
             return this
         }
 
+        fun addListener(listener: FeedbackListener): Builder {
+            this.listener = listener
+            return this
+        }
+
         fun build(): FeedbackDialog {
             if (fbItem == null) {
                 throw IllegalStateException("Feedback items are required. Please call addFeedbackItem().")
@@ -224,6 +238,7 @@ class FeedbackDialog(
                 this.receiveEmail = this@Builder.receiveEmail!!
                 this.colorTheme = this@Builder.mThemeColor
                 this.otherText = this@Builder.otherText
+                this.listener = this@Builder.listener
             }
         }
     }

@@ -42,6 +42,15 @@ class MainActivity : AppCompatActivity() {
             .setReceiveEmail("universe@lutech.ltd")
             .setColorTheme(Color.RED)
             .setOtherText("GGGGGGGGGGGGGGGGGGG")
+            .addListener(object: FeedbackDialog.FeedbackListener {
+                override fun onRate() {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onFeedback() {
+                    TODO("Not yet implemented")
+                }
+            })
             .build()
 
         bd.btnShow.setOnClickListener {
