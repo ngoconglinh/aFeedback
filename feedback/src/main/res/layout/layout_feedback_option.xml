@@ -18,7 +18,7 @@
         android:fontFamily="@font/poppins_regular"
         android:includeFontPadding="false"
         android:paddingStart="10dp"
-        android:textColor="@color/neutral_gray_800"
+        android:textColor="@color/textPrimary"
         android:textSize="15sp"
         tools:text="@tools:sample/last_names" />
 </androidx.constraintlayout.widget.ConstraintLayout>

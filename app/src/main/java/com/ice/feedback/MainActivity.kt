@@ -1,9 +1,11 @@
 package com.ice.feedback
 
+import android.app.Activity
 import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ice.feedback.databinding.ActivityMainBinding
@@ -24,13 +26,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         val fbItem = listOf(
-            Feedback(text = "🗑️ Can’t recover messages", textNonTranslate = "AAAAAAAAAAAAAAAAAAA"),
-            Feedback(text = "🔐 Login issues", textNonTranslate = "BBBBBBBBBBBBBBBBBBB"),
-            Feedback(text = "⏸️ Status saver not working", textNonTranslate = "CCCCCCCCCCCCCCCCCCC"),
-            Feedback(text = "📁 Downloaded files not found", textNonTranslate = "DDDDDDDDDDDDDDDDDDD"),
-            Feedback(text = "🤔 Hard to use", textNonTranslate = "EEEEEEEEEEEEEEEEEEE"),
-            Feedback(text = "💥 App crashes or lags", textNonTranslate = "FFFFFFFFFFFFFFFFFFF"),
-            Feedback(text = "📢 Too many ads", textNonTranslate = "GGGGGGGGGGGGGGGGGGG"),
+            Feedback(text = "🗑️ Can’t recover messages", textNonTranslate = "Can’t recover messages"),
+            Feedback(text = "🔐 Login issues", textNonTranslate = "Login issues"),
+            Feedback(text = "⏸️ Status saver not working", textNonTranslate = "Status saver not working"),
+            Feedback(text = "📁 Downloaded files not found", textNonTranslate = "Downloaded files not found"),
+            Feedback(text = "🤔 Hard to use", textNonTranslate = "Hard to use"),
+            Feedback(text = "💥 App crashes or lags", textNonTranslate = "App crashes or lags"),
+            Feedback(text = "📢 Too many ads", textNonTranslate = "Too many ads"),
         )
 
         val dialog = FeedbackDialog.Builder(this)
@@ -41,21 +43,36 @@ class MainActivity : AppCompatActivity() {
             .setSenderPass("abc")
             .setReceiveEmail("universe@lutech.ltd")
             .setColorTheme(Color.RED)
-            .setOtherText("GGGGGGGGGGGGGGGGGGG")
+            .setOtherText("Others")
             .addListener(object: FeedbackDialog.FeedbackListener {
                 override fun onRate() {
-                    TODO("Not yet implemented")
                 }
 
                 override fun onFeedback() {
-                    TODO("Not yet implemented")
                 }
             })
             .build()
 
         bd.btnShow.setOnClickListener {
 
-            dialog.showDialog(isOpenFeedback = true)
+            dialog.showDialog(isOpenFeedback = false)
+        }
+        bd.btnUiMode.setOnClickListener {
+            it.isSelected = !it.isSelected
+            enableDarkMode(it.isSelected)
+        }
+    }
+
+
+    private fun enableDarkMode(enable: Boolean) {
+        val currentNightMode = AppCompatDelegate.getDefaultNightMode()
+        val newNightMode = if (enable) {
+            AppCompatDelegate.MODE_NIGHT_YES
+        } else {
+            AppCompatDelegate.MODE_NIGHT_NO
+        }
+        if (currentNightMode != newNightMode) {
+            AppCompatDelegate.setDefaultNightMode(newNightMode)
         }
     }
 }

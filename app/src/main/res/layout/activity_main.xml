@@ -13,4 +13,10 @@
         android:layout_height="wrap_content"
         android:text="Show"/>
 
+    <Button
+        android:id="@+id/btnUiMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UI Mode"
+        app:layout_constraintTop_toBottomOf="@+id/btnShow" />
 </androidx.constraintlayout.widget.ConstraintLayout>
