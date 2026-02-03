@@ -11,6 +11,7 @@
     <color name="black_700">#B2000000</color>
 
     <color name="bgPrimary">#ffffff</color>
+    <color name="bgSecondary">#E9E9E9</color>
     <color name="textPrimary">#141414</color>
     <color name="textSecondary">#454545</color>
 </resources>

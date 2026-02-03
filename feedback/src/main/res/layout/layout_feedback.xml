@@ -50,7 +50,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="18dp"
                 android:layout_weight="1"
-                android:background="@drawable/bg_corner_2"
+                android:background="@drawable/bg_corner_3"
                 android:fontFamily="@font/roboto_regular"
                 android:gravity="start"
                 android:hint="@string/txt_tell_us_more_about_your_issue"
@@ -61,7 +61,7 @@
                 android:minHeight="120dp"
                 android:paddingHorizontal="13dp"
                 android:paddingVertical="15dp"
-                android:textColor="@color/neutral_gray_800"
+                android:textColor="@color/textPrimary"
                 android:textColorHint="@color/neutral_gray_300"
                 android:textSize="14sp"
                 android:visibility="gone"/>
