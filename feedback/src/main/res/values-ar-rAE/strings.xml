@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_thanks_for_your_feedback">شكرًا لتعليقاتك</string>
+    <string name="txt_tell_us_what_bothers_you">أخبرنا بما يزعجك</string>
+    <string name="txt_send">إرسال</string>
+    <string name="txt_tell_us_more_about_your_issue">أخبرنا المزيد عن مشكلتك</string>
+    <string name="txt_enjoying_the_app">هل تستمتع باستخدام التطبيق؟</string>
+    <string name="txt_your_feedback_helps_us_get_better">تعليقاتك تساعدنا على التحسين!</string>
+    <string name="txt_the_best_rating_for_us">أفضل تقييم لنا</string>
+    <string name="txt_rate_us">قيّمنا</string>
+    <string name="txt_maybe_later">ربما لاحقًا</string>
+    <string name="txt_not_enjoying_the_app">ألا تستمتع بالتطبيق؟</string>
+    <string name="txt_could_you_share_what_went_wrong">هل يمكنك مشاركة المشكلة التي واجهتك؟</string>
+    <string name="txt_thank_you_for_the_love">شكرًا لك على دعمك!</string>
+    <string name="txt_your_rating_made_our_day">تقييمك أسعدنا!</string>
+    <string name="txt_other">أخرى</string>
+</resources>

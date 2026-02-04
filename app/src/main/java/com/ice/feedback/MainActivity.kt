@@ -2,7 +2,9 @@ package com.ice.feedback
 
 import android.app.Activity
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.os.LocaleList
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -60,6 +62,11 @@ class MainActivity : AppCompatActivity() {
         bd.btnUiMode.setOnClickListener {
             it.isSelected = !it.isSelected
             enableDarkMode(it.isSelected)
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val localeManager = getSystemService(android.app.LocaleManager::class.java)
+            localeManager.applicationLocales = LocaleList.forLanguageTags("ar")
         }
     }
 
